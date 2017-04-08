@@ -5,7 +5,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 INPUT_NEURONS = 784
-ENCODED_NEURONS = 10
+ENCODED_NEURONS = 50
 OUTPUT_NEURONS = INPUT_NEURONS
 OPTIMIZER_STEP_SIZE = 1e-3
 
