@@ -33,8 +33,8 @@ num_encoders = 50
 def baseline_model():
 	# create model
 	model = Sequential()
-	model.add(Dense(num_pixels, input_dim=num_pixels, kernel_initializer='normal', activation='relu'))
-	model.add(Dense(num_encoders, kernel_initializer='normal', activation='relu'))
+	model.add(Dense(num_encoders, input_dim=num_pixels, kernel_initializer='normal', activation='relu'))
+	# model.add(Dense(num_encoders, kernel_initializer='normal', activation='relu'))
 	model.add(Dense(num_pixels, kernel_initializer='normal', activation='sigmoid'))
 	# Compile model
 	model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
@@ -50,4 +50,4 @@ model.fit(X_train, X_train, validation_data=(X_train, X_train), epochs=2, batch_
 scores = model.evaluate(X_test, X_test, verbose=0)
 print("Baseline Error: %.2f%%" % (100-scores[1]*100))
 
-visualiser.visualise_keras(model, X_test)
+visualiser.visualise_keras(model, X_test, transform_required=True)
