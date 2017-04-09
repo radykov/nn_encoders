@@ -5,5 +5,8 @@ Feel free to play around changing the amount of encoding neurons for yourself.
 
 I did 2 implementations for MNIST, one in keras one in TensorFow
 
-# CIFAR 
-In progress
+# CIFAR-10 Linear & MLP
+Doesn't really work well at generalising 
+
+# CIFAR-10 Convoluted
+TO DO

@@ -2,9 +2,6 @@ import numpy
 from keras.datasets import cifar10
 from keras.models import Sequential
 from keras.layers import Dense
-from keras.layers.core import Flatten, Reshape
-from matplotlib import pyplot
-from scipy.misc import toimage
 import visualiser
 
 # fix random seed for reproducibility
@@ -31,7 +28,6 @@ def baseline_model():
     # create model
     model = Sequential()
     model.add(Dense(num_encoders, input_dim=3072, kernel_initializer='normal', activation='relu'))
-    model.add(Dense(num_encoders/2, kernel_initializer='normal', activation='relu'))
     model.add(Dense(3072, kernel_initializer='normal', activation='sigmoid'))
     model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
     return model
